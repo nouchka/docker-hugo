@@ -1,5 +1,6 @@
-DOCKER_NAMESPACE=nouchka
 DOCKER_IMAGE=hugo
+DOCKER_NAMESPACE=nouchka
+prefix = /usr/local
 
 .DEFAULT_GOAL := build
 
@@ -10,7 +11,10 @@ run:
 	docker run $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE)
 
 check:
-	hadolint
+	docker run --rm -i hadolint/hadolint < Dockerfile
 
 test: build run check
 	docker run $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE) version
+
+install:
+	install bin/$(DOCKER_IMAGE) $(prefix)/bin
