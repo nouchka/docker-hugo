@@ -29,4 +29,3 @@ VOLUME /home/developer/hugo
 WORKDIR /home/developer/hugo
 
 ENTRYPOINT [ "/hugo" ]
-CMD [ "--help" ]
