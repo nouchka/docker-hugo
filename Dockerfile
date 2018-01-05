@@ -28,4 +28,5 @@ RUN apt-get update && \
 VOLUME /home/developer/hugo
 WORKDIR /home/developer/hugo
 
+USER developer
 ENTRYPOINT [ "/hugo" ]
