@@ -8,13 +8,12 @@ build:
 	docker build -t $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE) .
 
 run:
-	docker run $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE)
+	docker run $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE) version
 
 check:
 	docker run --rm -i hadolint/hadolint < Dockerfile
 
 test: build run check
-	docker run $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE) version
 
 install:
 	install bin/$(DOCKER_IMAGE) $(prefix)/bin
