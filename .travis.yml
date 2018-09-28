@@ -1,0 +1,13 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - gem install fpm package_cloud
+
+script:
+  - make test
+  - make push-deb
+
+notifications:
+  email: docker@katagena.com
