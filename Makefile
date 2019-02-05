@@ -31,7 +31,7 @@ build:
 	docker build -t $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE) .
 
 run:
-	docker run $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE) version
+	./bin/$(DOCKER_IMAGE)
 
 check:
 	docker run --rm -i hadolint/hadolint < Dockerfile
