@@ -8,6 +8,7 @@ LICENSE=Apache License 2.0
 prefix = /usr/local
 
 build-deb: deb
+	test ! -z $(PACKAGE_VERSION)
 	mkdir -p build/usr/sbin/
 	cp -Rf bin/* build/usr/sbin/
 	rm -f $(NAME)_$(PACKAGE_VERSION).$(TRAVIS_BUILD_NUMBER)_amd64.deb
