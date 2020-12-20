@@ -10,6 +10,6 @@ include Makefile.package
 check-version:
 	docker run --rm $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE):latest version|awk '{ print $$5 }'|awk -F '-' '{ print $$1 }'
 
-.PHONY: run
-run:
+.PHONY: test
+test:
 	docker run --rm $(DOCKER_NAMESPACE)/$(DOCKER_IMAGE):latest version
