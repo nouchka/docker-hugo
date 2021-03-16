@@ -10,14 +10,14 @@ ENV PUID ${PUID}
 ENV PGID ${PGID}
 
 ARG REPOSITORY=gohugoio/hugo
-ARG VERSION=0.79.1
-ARG FILE_SHA256SUM=cde743cdea29501e0ec231790e8c357a9f62e1cba571450fc6a92519ca102ca7
+ARG VERSION=0.80.0
+ARG FILE_SHA256SUM=b3a259bbe633e2f9182f8ecfc1b5cee6a7cfc4c970defe5f29c9959f2ef3259b
 ENV FILE_URL https://github.com/${REPOSITORY}/releases/download/v${VERSION}/hugo_${VERSION}_Linux-64bit.tar.gz
 
 WORKDIR /tmp
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN apt-get update && \
-	DEBIAN_FRONTEND=noninteractive apt-get -yq --no-install-recommends install wget=* tar=* ca-certificates=* && \
+	DEBIAN_FRONTEND=noninteractive apt-get -yq --no-install-recommends install wget=* tar=* ca-certificates=* make=* && \
 	wget -qO- "${FILE_URL}" > /tmp/archive.tgz && \
 	sha256sum /tmp/archive.tgz && \
 	echo "${FILE_SHA256SUM}  /tmp/archive.tgz"| sha256sum -c - && \
