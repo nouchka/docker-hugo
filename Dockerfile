@@ -22,6 +22,8 @@ RUN apt-get update && \
 	sha256sum /tmp/archive.tgz && \
 	echo "${FILE_SHA256SUM}  /tmp/archive.tgz"| sha256sum -c - && \
 	tar xzf - -C / < /tmp/archive.tgz && \
+	cp /hugo /usr/sbin/hugo && \
+	chmod +x /usr/sbin/hugo && \
 	chmod +x /hugo && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 	export uid=${PUID} gid=${PGID} && \
