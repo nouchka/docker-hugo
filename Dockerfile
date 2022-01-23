@@ -1,8 +1,4 @@
 FROM debian:stable-slim
-LABEL maintainer="Jean-Avit Promis docker@katagena.com"
-
-LABEL org.label-schema.vcs-url="https://github.com/nouchka/docker-hugo"
-LABEL version="latest"
 
 ARG PUID=1000
 ARG PGID=1000
