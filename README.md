@@ -10,4 +10,3 @@ Hugo blog in a docker container
 Not maintained anymore. Switch to hugomods/hugo which contains go that is needed for module
 
 https://hugomods.com/en/docs/docker/
-
