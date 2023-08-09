@@ -1,6 +1,7 @@
 #!/bin/bash
 
 docker run --rm \
+	--user="node" \
 	-p 1313:1313 \
-	-v "$(pwd):/home/developer/hugo" \
-	nouchka/hugo "$@"
+	-v "$(pwd):/src" \
+	hugomods/hugo "$@"

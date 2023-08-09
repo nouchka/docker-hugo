@@ -6,3 +6,5 @@
 [![Codacy grade](https://img.shields.io/codacy/grade/48fad382608240cc9e47b2d861cc68db)](https://app.codacy.com/manual/nouchka/docker-hugo/dashboard)
 
 Hugo blog in a docker container
+
+Not maintained anymore. Switch to hugomods/hugo which contains go that is needed for module
