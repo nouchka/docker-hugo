@@ -4,4 +4,4 @@ docker run --rm \
 	--user="node" \
 	-p 1313:1313 \
 	-v "$(pwd):/src" \
-	hugomods/hugo "$@"
+	hugomods/hugo /usr/bin/hugo "$@"
